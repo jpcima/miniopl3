@@ -1,0 +1,6 @@
+[submodule "dpf"]
+	path = dpf
+	url = https://github.com/DISTRHO/DPF.git
+[submodule "thirdparty/libADLMIDI"]
+	path = thirdparty/libADLMIDI
+	url = https://github.com/Wohlstand/libADLMIDI.git
