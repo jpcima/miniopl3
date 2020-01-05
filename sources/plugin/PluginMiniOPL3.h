@@ -82,6 +82,12 @@ protected:
     void loadProgram(uint32_t index) override;
 
     // -------------------------------------------------------------------
+    // States
+    void initState(uint32_t index, String &stateKey, String &defaultStateValue) override;
+    String getState(const char *key) const override;
+    void setState(const char *key, const char *value) override;
+
+    // -------------------------------------------------------------------
     // Optional
 
     // Optional callback to inform the plugin about a sample rate change.

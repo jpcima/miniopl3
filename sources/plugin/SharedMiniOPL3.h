@@ -71,6 +71,11 @@ enum ParameterId
     paramCount
 };
 
+enum StateId
+{
+    stateCount
+};
+
 struct Program
 {
     const char *name;

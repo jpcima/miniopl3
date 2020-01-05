@@ -13,7 +13,7 @@
 // -----------------------------------------------------------------------
 
 PluginMiniOPL3::PluginMiniOPL3()
-    : Plugin(paramCount, programCount, 0),
+    : Plugin(paramCount, programCount, stateCount),
       fParams{new int[paramCount]{}},
       fRanges{new ParameterSimpleRange[paramCount]}
 {
@@ -54,6 +54,30 @@ void PluginMiniOPL3::loadProgram(uint32_t index)
 
     for (unsigned p = 0; p < paramCount; ++p)
         setParameterValue(p, EmbeddedPrograms[index].values[p]);
+}
+
+// -----------------------------------------------------------------------
+// States
+
+void PluginMiniOPL3::initState(uint32_t index, String &stateKey, String &defaultStateValue)
+{
+    (void)index;
+    (void)stateKey;
+    (void)defaultStateValue;
+    DISTRHO_SAFE_ASSERT_RETURN(false, );
+}
+
+String PluginMiniOPL3::getState(const char *key) const
+{
+    (void)key;
+    DISTRHO_SAFE_ASSERT_RETURN(false, String{});
+}
+
+void PluginMiniOPL3::setState(const char *key, const char *value)
+{
+    (void)key;
+    (void)value;
+    DISTRHO_SAFE_ASSERT_RETURN(false,);
 }
 
 // -----------------------------------------------------------------------
