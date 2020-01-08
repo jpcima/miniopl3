@@ -177,6 +177,20 @@ void writeInstrumentAsLv2ManTtl(unsigned index, const Ins &ins, const char *name
         gLv2HeaderWritten = true;
     }
 
+    auto bankInsert = gLv2BanksKnown.insert(
+        std::pair<std::string, size_t>{ins.filename, gLv2BanksKnown.size()});
+    unsigned bankno = bankInsert.first->second;
+
+    if (bankInsert.second) {
+        printf(
+            "\n"
+            "syn:bank%04u" "\n"
+            "\t" "a pset:Bank ;" "\n"
+            "\t" "lv2:appliesTo <%s> ;" "\n"
+            "\t" "rdfs:seeAlso <presets.ttl> .\n",
+            bankno, DISTRHO_PLUGIN_URI);
+    }
+
     printf(
         "\n"
         "syn:preset%04u" "\n"
@@ -209,7 +223,6 @@ void writeInstrumentAsLv2PresetTtl(unsigned index, const Ins &ins, const char *n
         printf(
             "\n"
             "syn:bank%04u" "\n"
-            "\t" "a pset:Bank ;" "\n"
             "\t" "rdfs:label \"\"\"%s\"\"\" ." "\n",
             bankno, ins.filename);
     }
