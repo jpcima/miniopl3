@@ -188,8 +188,8 @@ PRESET_BANKS := \
 presets:
 	make -C tools
 	install -d presets/miniopl3-presets.lv2
-	tools/bin/bank2preset$(APP_EXT) -M "$(PRESET_URI_PREFIX)" > presets/miniopl3-presets.lv2/manifest.ttl $(PRESET_BANKS)
-	tools/bin/bank2preset$(APP_EXT) -L "$(PRESET_URI_PREFIX)" > presets/miniopl3-presets.lv2/presets.ttl $(PRESET_BANKS)
+	tools/bin/bank2preset -M "$(PRESET_URI_PREFIX)" > presets/miniopl3-presets.lv2/manifest.ttl $(PRESET_BANKS)
+	tools/bin/bank2preset -L "$(PRESET_URI_PREFIX)" > presets/miniopl3-presets.lv2/presets.ttl $(PRESET_BANKS)
 
 clean-presets:
 	rm -rf presets

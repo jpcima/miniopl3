@@ -1,4 +1,4 @@
-CXX ?= g++
+HOSTCXX ?= g++
 CXXFLAGS ?= -O2 -g
 LDFLAGS ?=
 
@@ -7,7 +7,7 @@ CXXFLAGS += -Wall -Wextra
 CXXFLAGS += -MD -MP
 CXXFLAGS += -Isources
 
-TARGET_MACHINE := $(shell $(CXX) -dumpmachine)
+TARGET_MACHINE := $(shell $(HOSTCXX) -dumpmachine)
 ifneq (,$(findstring mingw,$(TARGET_MACHINE)))
 APP_EXT := .exe
 LDFLAGS += -static
@@ -28,11 +28,11 @@ clean:
 
 bin/bank2preset$(APP_EXT): $(OBJS)
 	@mkdir -p $(dir $@)
-	$(CXX) -o $@ $^ $(LDFLAGS)
+	$(HOSTCXX) -o $@ $^ $(LDFLAGS)
 
 build/%.o: %.cpp
 	@mkdir -p $(dir $@)
-	$(CXX) -c -o $@ $< $(CXXFLAGS)
+	$(HOSTCXX) -c -o $@ $< $(CXXFLAGS)
 
 .PHONY: all clean
 
