@@ -81,7 +81,6 @@ matrix:
 
 before_script:
   - sed -i~ 's%/usr/local%/usr%g' plugins/*/Makefile
-  - patch -d dpf -p1 -i "`pwd`"/resources/patch/DPF-bypass.patch
 
 before_deploy:
   - |
