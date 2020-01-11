@@ -1,6 +1,7 @@
 #pragma once
 #include "../thirdparty/libADLMIDI/src/wopl/wopl_file.h"
 #include <ins_names.h>
+#include <string>
 #include <vector>
 #include <unordered_map>
 #include <memory>
