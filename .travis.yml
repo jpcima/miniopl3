@@ -99,5 +99,9 @@ deploy:
   on:
     branch: master
 
+env:
+  global:
+    secure: "mQf6NdewZTNRXwWJS6HKQJ8l/WxvPVhTj0aVFKNOnP30Jt/xt4Sig0rlccXrpX4DaqzFK7gTAMxwB7PY/hMT1NYSG7Aw50klOWXG1sB5W133cNN2Tv0EGiLW0DKd4vWbaQz09FcpmyF9vHi7xP0OAEfWvWDyqk/TP+ajHyIClYDNmXBb9i8Txm5d1ax3HQUsBSGGcMMC1Bo6F7ZxasF/NNSZeEfvr7CB+QykxbOnpuhHxiWgGj3iyzH6YQI8mHHhmRTc4+W7TMY5Z/RSgB603+X7sYUWwHEilnB5Sxm05Twz+dbaHVnmPWZnJW2ugf1jLwRCSo9Bo8gkmr0d+yl2CgCiNfZkgv4hVzxvZo93pPlaw9jNPhrMXXmK/sY4eE7xSkSJXZoB1TaxlZyzjUYdxpZN10YJqOUSJqgSHyMmGVe2y55XLblCl7h6hLnE+RtVOCUBkoT+eyw79z6Iw0/3wUTT1Ww89Ih4zcJxou2fRUatGqC8LkrnY1wDLRjhHtIx5eqraYoMLqI67GeUXejOiaRb8ugWrvXvbqqFk63dJTa0vONtmeVBBU3fEnQqa98SuAdSR0ylgsRgCAX6xy2Oub+7iH25QCwAkqyVmzLoi1+nlhEtg79apPc4DpkGCgeR/979XddicMhW0Zd1UYcrPIN/fmraCslR0nYY1fl7YLg="
+
 notifications:
   irc: "ircs://chat.freenode.net:7070/#librazik"
